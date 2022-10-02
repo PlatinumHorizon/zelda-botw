@@ -3,12 +3,17 @@ import { createStore } from 'vuex'
 export default createStore({
   state () {
     return {
-      count: 0
+      loading: true
     }
   },
   mutations: {
-    increment (state) {
-      state.count++
+    changeLoading (state) {
+      state.loading = !state.loading
+    }
+  },
+  getters: {
+    isLoading(state){
+      return state.loading
     }
   }
 })
