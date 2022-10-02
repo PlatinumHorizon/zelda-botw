@@ -34,7 +34,8 @@ module.exports = {
       animation: {
         'open-sheikah-eye': 'raise-gap .55s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1 forwards',
         'sheikah-glow': 'glow 1s ease-in-out infinite',
-        'sheikah-out': 'fade-out .55s .5s ease-in-out 1 forwards'
+        'sheikah-out': 'fade-out .55s .5s ease-in-out 1 forwards',
+        'blur-bg' : 'bluring 1.55s 1.55s ease-in-out 1 forwards'
       },
     },
   },
