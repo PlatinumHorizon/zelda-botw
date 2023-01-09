@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div id="sheikah-loading" :class="{'animate-sheikah-out':!isLoading}" class="flex justify-center items-center fixed top-0 left-0 right-0 bottom-0 bg-sheikah-dark-blue bg-repeat h-full w-full">
+  <div id="sheikah-loading" :class="{'animate-sheikah-out':!isLoading}" class="flex justify-center items-center fixed top-0 left-0 right-0 bottom-0 z-50 bg-sheikah-dark-blue bg-repeat h-full w-full">
     <div 
       :class="{'animate-open-sheikah-eye': !isLoading}"
       class="flex items-center gap-x-20 relative h-[280px]"
