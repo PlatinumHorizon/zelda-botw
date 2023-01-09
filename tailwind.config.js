@@ -4,11 +4,22 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      colors: {
+        golden: {
+          50: '#B99F65',
+          100: '#998049'
+        },
+
+      },
       backgroundImage: {
         'sheikah-blue': "url('/src/assets/img/sheikah_blue.png')",
         'sheikah-dark-blue': "url('/src/assets/img/sheikah_dark_blue.png')",
+        'sheikah-white': "url('/src/assets/img/sheikah_white.jpeg')"
       },
-      keyframes:{
+      backgroundSize: {
+        'sheikah-pattern-size': '270px'
+      },
+      keyframes: {
         'raise-gap': {
           'from':  { gap: '80px' },
           'to': { gap: '120px' }
@@ -37,6 +48,14 @@ module.exports = {
         'sheikah-out': 'fade-out .55s .5s ease-in-out 1 forwards',
         'blur-bg' : 'bluring 1.55s 1.55s ease-in-out 1 forwards'
       },
+      dropShadow: {
+        'golden-glow': '2px 2px 7px #b7a443',
+        'blue-glow': '0px 0px 6px #00bbff'
+      },
+      fontFamily: {
+        'roboto' : 'Roboto',
+        'hylian' : 'Hylian'
+      }
     },
   },
   plugins: [],
