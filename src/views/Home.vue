@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <div class="mt-32 lg:mt-14">
+      <div class="mt-40 lg:mt-14">
         <img src="../assets/img/link_zelda.png" class="max-h-[650px] drop-shadow-golden-glow">
       </div>
     </div>
