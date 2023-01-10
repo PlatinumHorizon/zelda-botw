@@ -19,8 +19,8 @@
             <img 
               src="../assets/img/sheikah_frame.png"
               class="max-w-[200px] absolute z-10 hover:drop-sh-sheikah-glow cursor-pointer"
-              @mouseenter="translate"
-              @mouseout="codify"
+              @mouseenter="changeFont(true)"
+              @mouseout="changeFont(false)"
             >
             <video
               id="trailer"
@@ -32,11 +32,11 @@
             ></video>
           </div>
           <div class="hidden sm:flex items-center justify-center mt-10">
-            <span v-for="letra in texto" :key="letra" class="translate font-hylian drop-shadow-blue-glow whitespace-pre text-lg"> {{letra}} </span>
+            <span v-for="letra in texto" :key="letra" class="translate font-hylian drop-shadow-blue-glow whitespace-pre text-lg text-white"> {{letra}} </span>
           </div>
         </div>
       </div>
-      <div class="mt-52 sm:mt-10">
+      <div class="mt-32 lg:mt-14">
         <img src="../assets/img/link_zelda.png" class="max-h-[650px] drop-shadow-golden-glow">
       </div>
     </div>
@@ -66,45 +66,35 @@ export default {
     }
   },
   methods: {
-    translate(){
-      let cli = 0;
-      let nli = 0;
+    changeFont(translate){
+
+      let currentLetterIndex = 0;
+      let nextLetterIndex = 0;
 
       let tl = gsap.timeline(); 
 
-      for(cli = 0; cli < this.texto.length; cli++){
+      for(currentLetterIndex = 0; currentLetterIndex < this.texto.length; currentLetterIndex++){
         
-        let currentLetter = document.getElementsByClassName('translate')[cli]
+        let currentLetter = document.getElementsByClassName('translate')[currentLetterIndex]
 
-        tl.to(currentLetter, {text: this.texto[cli] , duration: .008})
-        
-        tl.to(currentLetter, {text: this.texto[cli] , fontFamily: 'Roboto', duration: .008})
+        if(translate){
 
-        for(nli = cli + 1; nli < this.texto.length; nli++){
-          let nextLetter = document.getElementsByClassName('translate')[nli]
+          tl.to(currentLetter, {text: this.texto[currentLetterIndex] , duration: .008})
+          
+          tl.to(currentLetter, {text: this.texto[currentLetterIndex] , fontFamily: 'Roboto', duration: .008})
+
+        } else {
+
+          tl.to(currentLetter, {text: this.texto[currentLetterIndex] , duration: .01})
+
+          tl.to(currentLetter, {text: this.texto[currentLetterIndex] , fontFamily: 'Hylian', duration: .01})
+
+        }
+
+        for(nextLetterIndex = currentLetterIndex + 1; nextLetterIndex < this.texto.length; nextLetterIndex++){
+          let nextLetter = document.getElementsByClassName('translate')[nextLetterIndex]
           if(nextLetter.innerHTML != ' '){
             tl.to(nextLetter, {text: this.makeHash(1), duration: .008})
-          }
-        }
-      }
-    },
-    codify(){
-      let cli = 0;
-      let nli = 0;
-
-      let tl = gsap.timeline(); 
-
-      for(cli = 0; cli < this.texto.length; cli++){
-        
-        let currentLetter = document.getElementsByClassName('translate')[cli]
-
-        tl.to(currentLetter, {text: this.texto[cli] , duration: .01})
-        tl.to(currentLetter, {text: this.texto[cli] , fontFamily: 'Hylian', duration: .01})
-
-        for(nli = cli + 1; nli < this.texto.length; nli++){
-          let nextLetter = document.getElementsByClassName('translate')[nli]
-          if(nextLetter.innerHTML != ' '){
-            tl.to(nextLetter, {text: this.makeHash(1), duration: .01})
           }
         }
       }
@@ -126,7 +116,5 @@ export default {
 </script>
 
 <style scoped>
-span{
-  color: white;
-} 
+
 </style>
