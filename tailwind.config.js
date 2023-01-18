@@ -54,7 +54,9 @@ module.exports = {
       },
       fontFamily: {
         'roboto' : 'Roboto',
-        'hylian' : 'Hylian'
+        'sheikah' : 'Sheikah',
+        'hylian' : 'Hylian',
+        'botw-hylian' : 'BotwHylian'
       }
     },
   },
