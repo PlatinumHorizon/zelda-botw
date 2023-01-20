@@ -1,5 +1,6 @@
 <template>
-  <div id="Home">
+  <div id="Home" class="max-w-[1440px] my-0 mx-auto">
+    <nav-bar></nav-bar>
     <video
       id="video-background" 
       src="../assets/video/zelda-botw-bg.mp4"
@@ -12,8 +13,12 @@
 </template>
 
 <script>
+
+import NavBar from '@/components/NavBar.vue'
 import gsap from '../helpers/gsap'
+
 export default {
+  components: { NavBar },
   name: 'Home',
   data: () => ({
     tl: gsap.timeline(),
