@@ -1,8 +1,8 @@
 <template>
-  <div id="nav-bar" class="ml-10 mr-32 mt-8">
+  <div id="nav-bar" class="relative z-10 ml-10 mr-32 mt-8">
     <div class="flex justify-between items-center">
       <div class="flex gap-10">
-        <div v-for="item in items" :key="item.title" class="flex items-center gap-1 cursor-pointer transition-all duration-500 hover:gap-5 hover:drop-shadow-blue-glow">
+        <div v-for="item in items" :key="item.title" class="flex items-center gap-1 cursor-pointer transition-all duration-500 hover:gap-5 hover:drop-shadow-blue-glow" @click="navigate">
           <div>
             <img src="../assets/svg/left-arrow.svg" class="h-2">
           </div>
@@ -65,7 +65,12 @@ export default {
     }
   },
   methods: {
-    
+    navigate(){
+      this.$store.commit('changeLoading')
+      setTimeout(() => {
+        this.$store.commit('changeLoading')
+      }, 2500)
+    }
   }
 }
 </script>
