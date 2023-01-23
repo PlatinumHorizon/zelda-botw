@@ -9,7 +9,7 @@
       type="video/mp4"
       playsinline loop muted
     ></video>
-    <div class="flex flex-col-reverse lg:flex-row justify-center items-center mt-6">
+    <div class="flex flex-col-reverse xl:flex-row justify-center items-center mt-6">
       <div class="flex flex-col gap-10">
         <p class="drop-shadow-blue-glow font-roboto text-white italic text-[28px] text-center">
           "May the goddess smile upon you"
@@ -35,17 +35,22 @@
             <span v-for="letter in trailerText" :key="letter" class="translate-trailer font-sheikah drop-shadow-blue-glow whitespace-pre text-md text-white"> {{letter}} </span>
           </div>
         </div>
-        <div 
-          class="flex items-center justify-center border-[3px] border-golden-50 rounded-md mx-auto my-0 bg-sheikah-blue w-44 h-16"
-          @mouseenter="changeFont(true, 'buttonText')"
-          @mouseout="changeFont(false, 'buttonText')"
+        <a
+          href="https://www.nintendo.com/pt-br/store/products/the-legend-of-zelda-breath-of-the-wild-switch/"
+          target="_blank"
+          class="flex items-center justify-center relative border-[3px] border-golden-50 rounded-md mx-auto my-0 bg-sheikah-blue w-44 h-16"
         >
+          <div 
+            class="absolute z-10 w-full h-full cursor-pointer"
+            @mouseenter="changeFont(true, 'buttonText')"
+            @mouseout="changeFont(false, 'buttonText')"
+          ></div>
           <span v-for="letter in buttonText" :key="letter" class="translate-button font-sheikah drop-shadow-blue-glow whitespace-pre text-md text-white"> {{letter}} </span>
-        </div>
+        </a>
       </div>
       <div class="relative">
         <img src="../assets/img/link-logo.png" class="relative bottom-16 left-[18px] w-[888px] h-auto">
-        <img src="../assets/svg/switch-logo.svg" class="absolute right-0 bottom-20 h-9">
+        <img src="../assets/svg/switch-logo.svg" class="absolute right-0 bottom-20 h-7">
       </div>
     </div>
   </div>
