@@ -1,6 +1,6 @@
 <template>
-  <div id="nav-bar" class="relative z-10 ml-10 mr-32 mt-8">
-    <div class="flex justify-between items-center">
+  <div id="nav-bar" class="relative mx-16 mt-8 bg-sheikah-blue rounded-full border-[3px] border-golden-50 px-12 py-2">
+    <div class="flex justify-between items-center relative z-10">
       <div class="flex gap-10">
         <div v-for="item in items" :key="item.title" class="flex items-center gap-1 cursor-pointer transition-all duration-500 hover:gap-5 hover:drop-shadow-blue-glow" @click="navigate">
           <div>
