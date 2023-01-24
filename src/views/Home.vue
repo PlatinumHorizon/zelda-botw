@@ -10,7 +10,7 @@
       playsinline loop muted
     ></video>
     <div class="flex flex-col-reverse xl:flex-row justify-center items-center mt-6">
-      <img src="../assets/svg/switch-logo.svg" class="my-6 md:hidden h-7">
+      <img src="../assets/svg/switch-logo.svg" class="mb-6 mt-9 md:hidden h-7">
       <div class="flex flex-col gap-10">
         <p class="mt-6 lg:mt-0 drop-shadow-blue-glow font-roboto text-white italic text-lg md:text-[28px] text-center">
           "May the goddess smile upon you"
