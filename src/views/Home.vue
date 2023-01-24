@@ -10,8 +10,9 @@
       playsinline loop muted
     ></video>
     <div class="flex flex-col-reverse xl:flex-row justify-center items-center mt-6">
+      <img src="../assets/svg/switch-logo.svg" class="my-6 md:hidden h-7">
       <div class="flex flex-col gap-10">
-        <p class="drop-shadow-blue-glow font-roboto text-white italic text-[28px] text-center">
+        <p class="mt-6 lg:mt-0 drop-shadow-blue-glow font-roboto text-white italic text-lg md:text-[28px] text-center">
           "May the goddess smile upon you"
         </p>
         <div class="relative max-w-[300px] my-0 mx-auto ">
@@ -32,7 +33,13 @@
         </div>
         <div class="relative w-full">
           <div class="flex items-center justify-center">
-            <span v-for="letter in trailerText" :key="letter" class="translate-trailer font-sheikah drop-shadow-blue-glow whitespace-pre text-md text-white"> {{letter}} </span>
+            <span 
+              v-for="letter in trailerText"
+              :key="letter"
+              class="translate-trailer font-hylian sm:font-sheikah drop-shadow-blue-glow whitespace-pre text-[12px] md:text-base text-white"
+            >
+              {{letter}}
+            </span>
           </div>
         </div>
         <a
@@ -45,12 +52,14 @@
             @mouseenter="changeFont(true, 'buttonText')"
             @mouseout="changeFont(false, 'buttonText')"
           ></div>
-          <span v-for="letter in buttonText" :key="letter" class="translate-button font-sheikah drop-shadow-blue-glow whitespace-pre text-md text-white"> {{letter}} </span>
+          <span v-for="letter in buttonText" :key="letter" class="translate-button font-hylian sm:font-sheikah drop-shadow-blue-glow whitespace-pre text-md text-white"> {{letter}} </span>
         </a>
       </div>
-      <div class="relative">
-        <img src="../assets/img/link-logo.png" class="relative bottom-16 left-[18px] w-[888px] h-auto">
-        <img src="../assets/svg/switch-logo.svg" class="absolute right-0 bottom-20 h-7">
+      <div class="relative bottom-7 sm:bottom-0">
+        <img src="../assets/img/logo.png" class="block sm:hidden px-7">
+        <img src="../assets/img/link-logo.png" class="hidden sm:block relative xl:bottom-16 md:left-[18px] w-full md:w-[888px] h-auto">
+        <img src="../assets/img/link-zelda.png" class="block sm:hidden">
+        <img src="../assets/svg/switch-logo.svg" class="hidden md:block absolute right-0 bottom-20 h-7">
       </div>
     </div>
   </div>

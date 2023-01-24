@@ -1,6 +1,6 @@
 <template>
-  <div id="nav-bar" class="relative mx-16 mt-8 bg-sheikah-blue rounded-full border-[3px] border-golden-50 px-12 py-2">
-    <div class="flex justify-between items-center relative z-10">
+  <div id="nav-bar" class="inline-block lg:block relative ml-7 lg:mx-16 mt-8 lg:bg-sheikah-blue rounded-full lg:border-[3px] lg:border-golden-50 p-3 md:px-12 md:py-2">
+    <div class="hidden lg:flex justify-between items-center relative z-10">
       <div class="flex gap-10">
         <div v-for="item in items" :key="item.title" class="flex items-center gap-1 cursor-pointer transition-all duration-500 hover:gap-5 hover:drop-shadow-blue-glow" @click="navigate">
           <div>
@@ -22,6 +22,10 @@
         </div>
       </div>
     </div>
+    <div class="flex lg:hidden">
+      <img src="../assets/svg/hamburguer.svg" class="h-5">
+    </div>
+    
   </div>
 </template>
 
